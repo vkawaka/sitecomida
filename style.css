@@ -10,18 +10,25 @@ ul, li, ol{
     list-style: none;
 }
 body{
+    height: 100vh;
     width: 100vw;
     background-image: url(./img/fundo.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: grid;
+    grid-template-rows: 134px 1fr;
 }
 header{
+    display: grid;
+    grid-template-rows: auto;
+    background-color: #FFFFFF;
+}
+.primeiro{
     display: flex;
     flex-direction: row;
     gap: 200px;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
 }
 .telefone{
     display: flex;
@@ -55,23 +62,162 @@ header{
     border-style: solid;
     font-size: 1.25rem;
 }
+.divisoria{
+    width: 100vw;
+    height: 1px;
+    background-color: #000000;
+}
 main{
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 2fr;
+    place-items: end start;
+    grid-template-areas: 
+    "f2 f3 f3 f4 f4"
+    "f5 f5 f6 f6 f6"
+    ;
 }
 .main{
     width: 450px;
     height: 500px;
     position: absolute;
+    bottom: 10%;
     left: 45%;
     z-index: -1;
 }
 .text{
+    margin-left: 320px;
     font-size: 3rem;
     font-weight: bold;
     place-items: end;
+    grid-area: f3;
 }
 .text .orange{
     color: #FB5D2E
 }
+.second{
+    grid-area: f5;
+}
+.second a{
+    display: flex;
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #FB5D2E;
+    font-size: 1.125rem;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 60px;
+    margin-left: 100px;
+}
+.linha{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 1px;
+    height: 200px;
+    margin-left: 33px;
+    grid-area: f2;
+}
+.link{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    grid-area: f6;
+    margin-left: 500px;
+    margin-bottom: 20px;
+}
+.link a{
+    color: #FFFFFF;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.125rem;
+}
+.link1{
+    background-image: url(./img/desc1.png);
+    width: 200px;
+    height: 100px;
+}
+.link2{
+    background-image: url(./img/desc2.png);
+    width: 200px;
+    height: 100px;
+}
+.link3{
+    background-image: url(./img/desc3.png);
+    width: 200px;
+    height: 100px;
+}
+.infos{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    grid-area: f5;
+    margin-bottom: 10px;
+}
+.infos img{
+    width: 20px;
+    height: 20px;
+}
+
+
+@media (max-width: 768px) {
+    body{
+        overflow: hidden;
+    }
+    header{
+        height: 70px;
+    }
+    main{
+        display: grid;
+        grid-template-areas: 
+        "text text"
+        "info info"
+        "botao botao"
+        
+        ;
+    }
+    .primeiro{
+        gap: 10px;
+    }
+    .logo{
+        width: 60px;
+        place-self: start;
+        margin-right: 1300px;
+        padding-top: 10px;
+    }
+    .telefone{
+        width: 50px;
+        margin-right: 1100px;
+    }
+    .divisoria{
+        bottom: 100%
+    }
+    .text{
+        font-size: 1.125rem;
+        grid-area: text;
+        }
+    .link{
+        grid-area: botao;
+    }
+    
+    .main{
+        display: none;
+    }
+    .info{
+        display: none;
+    }
+    .linha{
+        display: none;
+    }
+
+    .first{
+        display: none;
+    }
+    .telefone p{
+        display: none;
+    }
+
+
+    }
