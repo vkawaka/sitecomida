@@ -23,6 +23,9 @@ header{
     grid-template-rows: auto;
     background-color: #FFFFFF;
 }
+.menu{
+    display: none;
+}
 .primeiro{
     display: flex;
     flex-direction: row;
@@ -165,45 +168,64 @@ main{
 @media (max-width: 768px) {
     body{
         overflow: hidden;
+        background-image: url(./img/backgroundbackground.svg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
     }
     header{
         height: 70px;
     }
-    main{
-        display: grid;
-        grid-template-areas: 
-        "text text"
-        "info info"
-        "botao botao"
-        
-        ;
-    }
     .primeiro{
-        gap: 10px;
+        display: flex;
+        width: 100%;
+        place-items: center;
     }
     .logo{
         width: 60px;
-        place-self: start;
         margin-right: 1300px;
         padding-top: 10px;
     }
     .telefone{
-        width: 50px;
-        margin-right: 1100px;
+        margin-left: -1300px;
+        align-self: center;
+    }
+    .telefone img{
+        width: 20px;
+    }
+    .telefone p{
+        display: none;
+    }
+    .menu{
+        margin-right: 1200px;
     }
     .divisoria{
         bottom: 100%
     }
     .text{
         font-size: 1.125rem;
-        grid-area: text;
+        margin-left: -340px;
         }
     .link{
+        margin-left: -500px;
+        margin-bottom: 600px;
         
+    }
+    .second{
+        margin-bottom: 480px;
+    }
+    .infos{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 700px;
     }
     
     .main{
-        display: none;
+        position: absolute;
+        top: 5%;
+        left: 20%;
+        width: 150px;
+        height: 200px;
     }
     .info{
         display: none;
@@ -216,7 +238,7 @@ main{
         display: none;
     }
     .telefone p{
-        display: none;
+        display: ;
     }
 
 
